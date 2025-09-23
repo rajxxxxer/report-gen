@@ -1,0 +1,45 @@
+# Node.js dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+/dist
+/build
+/.next
+/out
+/temp
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Puppeteer / PDF files
+/reports/*.pdf
+
+# Optional npm cache
+.npm
+
+# Yarn
+yarn.lock
