@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function ReportGenerator({ token }) {
   const [sessionId, setSessionId] = useState("");
   const [pdfLink, setPdfLink] = useState("");
   const [loading, setLoading] = useState(false);
+  const [username, setUsername] = useState("");
+
+  // Token se username extract
+  useEffect(() => {
+    if (!token) return;
+    try {
+      const payload = JSON.parse(atob(token.split(".")[1])); // JWT payload
+      setUsername(payload.username || payload.email || "Unknown User");
+    } catch (err) {
+      console.error("Invalid token", err);
+      setUsername("Unknown User");
+    }
+  }, [token]);
 
   const generateReport = async () => {
     if (!sessionId) return alert("Please enter session_id");
@@ -33,7 +46,16 @@ export default function ReportGenerator({ token }) {
 
   return (
     <div className="mt-6 max-w-xl border border-gray-200 rounded-xl p-6 shadow-sm">
-      <h2 className="text-xl text-amber-300 font-semibold mb-4">📄 Generate Assessment Report</h2>
+      {/* Username Display */}
+      {username && (
+        <div className="mb-4 text-gray-700 font-medium">
+          👤 Logged in as: <span className="text-blue-600">{username}</span>
+        </div>
+      )}
+
+      <h2 className="text-xl text-amber-300 font-semibold mb-4">
+        📄 Generate Assessment Report
+      </h2>
 
       {/* Input + Button Row */}
       <div className="flex gap-3 mb-4">
