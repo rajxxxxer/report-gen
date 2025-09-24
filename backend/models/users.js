@@ -1,3 +1,3 @@
-// In-memory fake DB
-let users = [];
-export default users;
+// Dummy user store
+const users = [];
+module.exports = users;
