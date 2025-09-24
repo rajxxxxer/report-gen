@@ -42,12 +42,12 @@ export default function Auth({ setToken }) {
       }
     } catch (err) {
       console.error(err);
-      alert('Something went wrong!');
+      alert('Something went wrong');
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black text-white px-4">
+    <div className="min-h-screen flex items-center justify-center bg-white text-black px-4">
       <div className="bg-gray-900 p-6 md:p-8 rounded-xl w-full max-w-sm shadow-lg">
         <h2 className="text-xl md:text-2xl font-semibold mb-6 text-center">
           {mode === 'login' ? 'Login' : 'Sign Up'}

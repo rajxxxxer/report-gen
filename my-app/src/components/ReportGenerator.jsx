@@ -27,7 +27,7 @@ export default function ReportGenerator({ token }) {
   };
 
   return (
-    <div style={{marginTop:20, border:'1px solid #eee', padding:16, borderRadius:8}}>
+    <div className='' style={{marginTop:20, border:'1px solid #eee', padding:16, borderRadius:8}}>
       <h2>Generate Report</h2>
       <input placeholder="session_id (e.g., session_001)" value={sessionId} onChange={e=>setSessionId(e.target.value)} style={{width:'60%', marginRight:8}} />
       <button onClick={generateReport} disabled={loading}>{loading ? 'Generating...' : 'Generate'}</button>
