@@ -12,13 +12,13 @@ function App() {
   }, [token]);
 
   return (
-    <div className="min-h-screen bg-black text-white px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-r from-blue-50 via-white to-blue-100 text-white px-4 py-8">
       {!token ? (
         <Auth setToken={setToken} />
       ) : (
         <div className="container mx-auto">
           <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-bold">Report Generator</h1>
+            <h1 className="text-2xl text-green-400 font-bold">Report Generator</h1>
             <button
               onClick={() => setToken('')}
               className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-md"
